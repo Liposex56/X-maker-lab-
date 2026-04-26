@@ -3,25 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>X MAKER</title>
+    <title>X MAKER | Semillero de investigacion UPTC</title>
     <meta
       name="description"
-      content="Semillero X MAKER con proyectos de cohetes, fallas atencionales, experiencia MakerLab y contactos."
+      content="Semillero X MAKER de la UPTC con proyectos sobre festival de cohetes, fallas atencionales, experiencias MakerLab y directorio de contacto."
+    />
+    <meta
+      name="keywords"
+      content="X MAKER, UPTC, semillero, cohetes de agua, fallas atencionales, MakerLab, investigacion, innovacion"
+    />
+    <meta name="author" content="Semillero X MAKER - UPTC" />
+    <meta property="og:title" content="X MAKER | Semillero de investigacion UPTC" />
+    <meta
+      property="og:description"
+      content="Festival de Cohetes X MAKER, investigacion educativa y experiencias academicas MakerLab."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="Recursos/x maker sin fondo .png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="X MAKER | Semillero UPTC" />
+    <meta
+      name="twitter:description"
+      content="Proyecto de cohetes, fallas atencionales, MakerLab y contactos oficiales."
     />
     <style>
       :root {
-        --yellow: #f5c332;
-        --yellow-soft: #ffe38a;
-        --navy: #18324d;
-        --navy-soft: #2d547d;
-        --slate: #41464d;
+        --yellow: #f4c63d;
+        --yellow-soft: #ffe7a2;
+        --navy: #17344f;
+        --navy-soft: #315b88;
+        --slate: #4d545d;
+        --ink: #182532;
+        --muted: #607284;
+        --line: rgba(23, 52, 79, 0.12);
         --bg: #edf2f7;
         --card: #ffffff;
-        --text: #1d2a36;
-        --muted: #627180;
-        --line: rgba(24, 50, 77, 0.12);
-        --shadow: 0 18px 40px rgba(16, 28, 40, 0.12);
-        --radius-xl: 28px;
+        --shadow: 0 18px 42px rgba(13, 24, 39, 0.12);
+        --radius-xl: 30px;
         --radius-lg: 22px;
         --radius-md: 16px;
       }
@@ -37,17 +55,13 @@
       body {
         margin: 0;
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        color: var(--text);
-        background: linear-gradient(180deg, #f4f6f9 0%, #eaf0f6 100%);
+        color: var(--ink);
+        background: linear-gradient(180deg, #f6f8fb 0%, #e9eff6 100%);
       }
 
       a {
         color: inherit;
         text-decoration: none;
-      }
-
-      .hidden {
-        display: none !important;
       }
 
       .app-shell {
@@ -57,14 +71,19 @@
       .header {
         position: sticky;
         top: 0;
-        z-index: 20;
-        background: linear-gradient(90deg, var(--yellow), #ffd24f);
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+        z-index: 40;
+        background: linear-gradient(90deg, var(--yellow), #ffd75a);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      .header-content,
+      .main-content,
+      .site-footer {
+        width: min(1600px, calc(100% - 40px));
+        margin: 0 auto;
       }
 
       .header-content {
-        width: min(1520px, calc(100% - 36px));
-        margin: 0 auto;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -76,55 +95,64 @@
         display: flex;
         align-items: center;
         gap: 14px;
-      }
-
-      .header-logo {
-        width: 62px;
-        height: 62px;
-        object-fit: contain;
-        border-radius: 14px;
-        background: rgba(255, 255, 255, 0.22);
-        padding: 4px;
-      }
-
-      .header-brand-copy {
         min-width: 0;
       }
 
+      .header-logo {
+        width: 64px;
+        height: 64px;
+        object-fit: contain;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.22);
+        padding: 6px;
+        flex-shrink: 0;
+      }
+
       .header-brand-title {
-        font-size: 1.55rem;
+        margin: 0;
+        font-size: 1.65rem;
         font-weight: 800;
-        color: #1d232a;
       }
 
       .header-brand-subtitle {
-        color: rgba(29, 35, 42, 0.8);
-        font-size: 0.92rem;
+        color: rgba(24, 37, 50, 0.8);
+        font-size: 0.96rem;
       }
 
       .top-nav {
         display: flex;
         flex-wrap: wrap;
-        justify-content: end;
+        justify-content: flex-end;
         gap: 10px;
       }
 
-      .top-nav-link {
+      .top-nav-link,
+      .btn-primary,
+      .btn-secondary {
         border: 0;
         cursor: pointer;
+        font: inherit;
+      }
+
+      .top-nav-link {
         border-radius: 999px;
-        padding: 12px 16px;
+        padding: 12px 17px;
         font-size: 0.95rem;
         font-weight: 700;
+        color: #202a34;
         background: rgba(255, 255, 255, 0.28);
-        color: #212830;
-        transition: transform 0.2s ease, background 0.2s ease;
+        transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
       }
 
       .top-nav-link:hover,
       .top-nav-link.active {
-        background: rgba(255, 255, 255, 0.9);
+        background: rgba(255, 255, 255, 0.95);
         transform: translateY(-1px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+      }
+
+      .main-content {
+        padding: 30px 0 44px;
       }
 
       .view {
@@ -133,25 +161,29 @@
 
       .view.active {
         display: block;
+        animation: fadeInView 0.35s ease both;
       }
 
-      .main-content {
-        width: min(1520px, calc(100% - 36px));
-        margin: 0 auto;
-        padding: 30px 0 44px;
+      @keyframes fadeInView {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
 
       .hero {
         display: grid;
         grid-template-columns: 1.1fr 0.9fr;
-        gap: 22px;
-        padding: 28px;
+        gap: 24px;
+        padding: 30px;
         border-radius: var(--radius-xl);
-        background:
-          linear-gradient(135deg, rgba(24, 50, 77, 0.98), rgba(45, 84, 125, 0.95)),
-          var(--navy);
-        box-shadow: var(--shadow);
+        background: linear-gradient(135deg, rgba(23, 52, 79, 0.98), rgba(49, 91, 136, 0.95));
         color: #fff;
+        box-shadow: var(--shadow);
       }
 
       .hero-kicker,
@@ -159,7 +191,7 @@
         display: inline-block;
         margin-bottom: 12px;
         color: var(--yellow);
-        font-size: 0.8rem;
+        font-size: 0.82rem;
         font-weight: 800;
         letter-spacing: 0.08em;
         text-transform: uppercase;
@@ -167,16 +199,59 @@
 
       .hero h1 {
         margin: 0 0 14px;
-        max-width: 12ch;
-        font-size: clamp(2.2rem, 5vw, 4.4rem);
+        max-width: 10.5ch;
+        font-size: clamp(2.4rem, 5vw, 4.5rem);
         line-height: 1.02;
       }
 
       .hero p {
         margin: 0;
-        max-width: 62ch;
-        color: rgba(255, 255, 255, 0.86);
+        color: rgba(255, 255, 255, 0.88);
         line-height: 1.8;
+        max-width: 64ch;
+      }
+
+      .hero-side {
+        display: grid;
+        gap: 18px;
+      }
+
+      .glass-card,
+      .section-panel,
+      .info-card,
+      .mini-card,
+      .table-card,
+      .resource-card,
+      .download-card,
+      .contact-card,
+      .highlight-box {
+        background: var(--card);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+      }
+
+      .glass-card {
+        padding: 24px;
+        border-radius: var(--radius-lg);
+      }
+
+      .glass-card h3 {
+        margin: 0 0 10px;
+        color: var(--navy);
+        font-size: 1.7rem;
+      }
+
+      .glass-card p,
+      .section-text,
+      .mini-card span,
+      .info-card p,
+      .table-card p,
+      .resource-card p,
+      .download-card p,
+      .contact-card p,
+      li {
+        color: var(--muted);
+        line-height: 1.75;
       }
 
       .action-row {
@@ -187,107 +262,73 @@
       }
 
       .btn-primary,
+      .download-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 14px;
+        padding: 13px 18px;
+        background: linear-gradient(135deg, var(--yellow), var(--yellow-soft));
+        color: #18222c;
+        font-weight: 800;
+      }
+
       .btn-secondary,
-      .download-link,
       .social-pill {
         display: inline-flex;
         align-items: center;
         justify-content: center;
         border-radius: 14px;
         padding: 13px 18px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        background: rgba(255, 255, 255, 0.12);
+        color: #fff;
         font-weight: 700;
       }
 
-      .btn-primary,
-      .download-link {
-        background: linear-gradient(135deg, var(--yellow), var(--yellow-soft));
-        color: #1a232d;
+      .section-panel {
+        margin-top: 24px;
+        padding: 28px;
+        border-radius: var(--radius-xl);
       }
 
-      .btn-secondary,
-      .social-pill {
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.16);
-        color: #fff;
-      }
-
-      .social-contact-list {
-        display: grid;
-        gap: 14px;
-        margin-top: 6px;
-      }
-
-      .social-contact-link {
+      .section-header {
         display: flex;
-        align-items: center;
-        gap: 12px;
-        padding: 14px 16px;
-        border-radius: 16px;
-        border: 1px solid var(--line);
-        background: #f8fafc;
-        color: var(--text);
-        font-weight: 700;
-      }
-
-      .social-icon {
-        width: 38px;
-        height: 38px;
-        border-radius: 12px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.05rem;
-        font-weight: 800;
-        color: #fff;
-      }
-
-      .social-icon.instagram {
-        background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
-      }
-
-      .social-icon.tiktok {
-        background: linear-gradient(135deg, #111111, #25f4ee, #fe2c55);
-      }
-
-      .hero-side {
-        display: grid;
+        align-items: flex-end;
+        justify-content: space-between;
         gap: 16px;
+        flex-wrap: wrap;
+        margin-bottom: 18px;
       }
 
-      .glass-card,
-      .section-panel,
-      .info-card,
-      .resource-card,
-      .download-card,
-      .contact-card {
-        background: var(--card);
-        border: 1px solid var(--line);
-        box-shadow: var(--shadow);
-      }
-
-      .glass-card {
-        border-radius: var(--radius-lg);
-        padding: 24px;
-      }
-
-      .glass-card h3 {
-        margin: 0 0 12px;
-        font-size: 1.7rem;
+      .section-title {
+        margin: 4px 0 0;
         color: var(--navy);
+        font-size: clamp(1.7rem, 3vw, 2.65rem);
       }
 
-      .glass-card p {
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.7;
+      .view-intro {
+        margin-bottom: 18px;
+      }
+
+      .pill {
+        display: inline-block;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(244, 198, 61, 0.16);
+        color: #8b6810;
+        font-size: 0.84rem;
+        font-weight: 700;
       }
 
       .badge-grid,
-      .grid-two,
       .grid-three,
+      .grid-two,
+      .wide-grid,
       .resource-grid,
       .download-grid,
-      .contact-grid {
+      .contact-grid,
+      .footer-grid {
         display: grid;
         gap: 18px;
       }
@@ -304,28 +345,24 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .wide-grid {
-        display: grid;
+      .wide-grid,
+      .footer-grid {
         grid-template-columns: 1.15fr 0.85fr;
-        gap: 18px;
       }
 
       .mini-card,
       .info-card,
+      .table-card,
       .resource-card,
       .download-card,
       .contact-card {
-        border-radius: var(--radius-lg);
         padding: 22px;
-      }
-
-      .mini-card {
-        background: rgba(255, 255, 255, 0.95);
-        color: var(--text);
+        border-radius: var(--radius-lg);
       }
 
       .mini-card strong,
       .info-card h4,
+      .table-card h4,
       .resource-card h4,
       .download-card h4,
       .contact-card h4 {
@@ -333,53 +370,6 @@
         margin: 0 0 10px;
         color: var(--navy);
         font-size: 1.08rem;
-      }
-
-      .mini-card span,
-      .info-card p,
-      .resource-card p,
-      .download-card p,
-      .contact-card p,
-      li {
-        color: var(--muted);
-        line-height: 1.72;
-      }
-
-      .section-panel {
-        margin-top: 24px;
-        border-radius: var(--radius-xl);
-        padding: 26px;
-      }
-
-      .section-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: end;
-        flex-wrap: wrap;
-        gap: 14px;
-        margin-bottom: 18px;
-      }
-
-      .section-title {
-        margin: 4px 0 0;
-        color: var(--navy);
-        font-size: clamp(1.6rem, 3vw, 2.5rem);
-      }
-
-      .section-text {
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.75;
-      }
-
-      .pill {
-        display: inline-block;
-        padding: 8px 12px;
-        border-radius: 999px;
-        background: rgba(245, 195, 50, 0.16);
-        color: #896713;
-        font-size: 0.84rem;
-        font-weight: 700;
       }
 
       .accent-gold {
@@ -394,26 +384,6 @@
         border-top: 5px solid var(--slate);
       }
 
-      ul {
-        margin: 12px 0 0;
-        padding-left: 18px;
-      }
-
-      .resource-card img {
-        display: block;
-        width: 100%;
-        height: 260px;
-        object-fit: cover;
-        border-radius: 16px;
-        margin-bottom: 14px;
-        background: #eef2f6;
-      }
-
-      .plain-link {
-        font-weight: 700;
-        color: var(--navy-soft);
-      }
-
       .simple-table {
         width: 100%;
         border-collapse: collapse;
@@ -423,7 +393,7 @@
       .simple-table th,
       .simple-table td {
         text-align: left;
-        padding: 12px 10px;
+        padding: 13px 10px;
         border-bottom: 1px solid var(--line);
         vertical-align: top;
       }
@@ -432,21 +402,187 @@
         color: var(--navy);
       }
 
-      .site-footer {
-        margin-top: 26px;
-        border-radius: var(--radius-xl);
-        padding: 26px;
-        background:
-          linear-gradient(135deg, rgba(24, 50, 77, 0.98), rgba(45, 84, 125, 0.94)),
-          var(--navy);
-        color: #fff;
-        box-shadow: var(--shadow);
+      .highlight-box {
+        padding: 22px;
+        border-radius: 18px;
+        background: #f8fafc;
       }
 
-      .footer-grid {
+      .plain-link {
+        color: var(--navy-soft);
+        font-weight: 800;
+      }
+
+      .info-stack {
         display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        gap: 18px;
+        gap: 12px;
+      }
+
+      .link-row {
+        margin-top: 14px;
+      }
+
+      .link-pending {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 16px;
+        border-radius: 12px;
+        background: rgba(244, 198, 61, 0.14);
+        border: 1.5px dashed #d7a316;
+        color: #7a5c0f;
+        font-size: 0.92rem;
+        font-weight: 700;
+      }
+
+      .link-pending::before {
+        content: "Pendiente";
+        font-size: 0.74rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .resource-card img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        border-radius: 16px;
+        margin-bottom: 14px;
+        background: #eef2f6;
+        cursor: zoom-in;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .resource-card img:hover {
+        transform: scale(1.02);
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
+      }
+
+      .social-contact-list {
+        display: grid;
+        gap: 14px;
+        margin-top: 6px;
+      }
+
+      .social-contact-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 16px;
+        border-radius: 16px;
+        border: 1px solid var(--line);
+        background: #f8fafc;
+        color: var(--ink);
+        font-weight: 800;
+      }
+
+      .social-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 12px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-weight: 800;
+      }
+
+      .social-icon.instagram {
+        background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+      }
+
+      .social-icon.tiktok {
+        background: linear-gradient(135deg, #111111, #25f4ee, #fe2c55);
+      }
+
+      .contact-extra {
+        margin-top: 10px;
+        font-size: 0.94rem;
+      }
+
+      .faq-list {
+        display: grid;
+        gap: 14px;
+      }
+
+      .faq-item {
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: #f8fafc;
+        overflow: hidden;
+      }
+
+      .faq-question {
+        width: 100%;
+        padding: 18px 20px;
+        border: 0;
+        background: transparent;
+        color: var(--navy);
+        text-align: left;
+        font: inherit;
+        font-weight: 800;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+      }
+
+      .faq-toggle {
+        color: var(--navy-soft);
+        font-size: 1.2rem;
+        line-height: 1;
+        transition: transform 0.2s ease;
+      }
+
+      .faq-answer {
+        display: none;
+        padding: 0 20px 18px;
+        color: var(--muted);
+        line-height: 1.74;
+      }
+
+      .faq-item.open .faq-answer {
+        display: block;
+      }
+
+      .faq-item.open .faq-toggle {
+        transform: rotate(45deg);
+      }
+
+      .countdown-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 58px;
+        padding: 10px 14px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .countdown-num {
+        color: #fff;
+        font-size: 1.9rem;
+        font-weight: 800;
+        line-height: 1;
+      }
+
+      .countdown-label {
+        margin-top: 5px;
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 0.72rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .site-footer {
+        margin-bottom: 32px;
+        padding: 26px;
+        border-radius: var(--radius-xl);
+        background: linear-gradient(135deg, rgba(23, 52, 79, 0.98), rgba(49, 91, 136, 0.95));
+        color: #fff;
+        box-shadow: var(--shadow);
       }
 
       .footer-brand-header {
@@ -457,48 +593,88 @@
       }
 
       .footer-logo {
-        width: 68px;
-        height: 68px;
+        width: 56px;
+        height: 56px;
         object-fit: contain;
+        flex-shrink: 0;
       }
 
       .footer-brand-header h3 {
         margin: 0;
-        font-size: 1.4rem;
+        font-size: 1.3rem;
       }
 
       .footer-brand-header p,
       .footer-brand-text {
         margin: 0;
-        color: rgba(255, 255, 255, 0.82);
+        color: rgba(255, 255, 255, 0.84);
         line-height: 1.75;
       }
 
       .footer-links {
         display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        align-items: start;
-        justify-content: end;
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
       }
 
-      .view-intro {
-        margin-bottom: 18px;
+      .footer-links .social-pill {
+        text-align: center;
       }
 
-      .highlight-box {
-        padding: 20px;
-        border-radius: 18px;
-        background: #f8fafc;
-        border: 1px solid var(--line);
+      .reveal-target {
+        opacity: 0;
+        transform: translateY(18px);
+        transition: opacity 0.45s ease, transform 0.45s ease;
       }
 
-      @media (max-width: 980px) {
-        .header-content,
+      .reveal-target.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      #lightbox {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 999;
+        background: rgba(0, 0, 0, 0.88);
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+      }
+
+      #lightbox.open {
+        display: flex;
+      }
+
+      #lightboxImg {
+        max-width: 90vw;
+        max-height: 88vh;
+        border-radius: 16px;
+        object-fit: contain;
+        box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+      }
+
+      #lightboxClose {
+        position: absolute;
+        top: 20px;
+        right: 24px;
+        width: 44px;
+        height: 44px;
+        border: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.15);
+        color: #fff;
+        font-size: 1.8rem;
+        cursor: pointer;
+      }
+
+      @media (max-width: 1024px) {
         .hero,
         .badge-grid,
-        .grid-two,
         .grid-three,
+        .grid-two,
         .wide-grid,
         .resource-grid,
         .download-grid,
@@ -508,18 +684,15 @@
         }
 
         .top-nav {
-          justify-content: start;
-        }
-
-        .header-content {
-          padding: 14px 0 18px;
+          justify-content: flex-start;
         }
       }
 
       @media (max-width: 720px) {
         .header-content,
-        .main-content {
-          width: min(100% - 18px, 1520px);
+        .main-content,
+        .site-footer {
+          width: min(100% - 18px, 1600px);
         }
 
         .top-nav-link,
@@ -529,22 +702,31 @@
         .social-pill {
           width: 100%;
         }
+
+        .header-content {
+          padding: 14px 0 18px;
+        }
+
+        .hero,
+        .section-panel {
+          padding: 22px;
+        }
       }
     </style>
   </head>
   <body>
     <div class="app-shell">
-      <header id="appHeader" class="header">
+      <header class="header">
         <div class="header-content">
           <div class="header-brand">
             <img class="header-logo" src="Recursos/x maker sin fondo .png" alt="Logo X MAKER" />
-            <div class="header-brand-copy">
+            <div>
               <div class="header-brand-title">X MAKER</div>
               <div class="header-brand-subtitle">Semillero de investigacion UPTC</div>
             </div>
           </div>
           <nav class="top-nav" aria-label="Navegacion principal">
-            <button class="top-nav-link active" data-view="inicioView">Inicio</button>
+            <button class="top-nav-link" data-view="inicioView">Inicio</button>
             <button class="top-nav-link" data-view="cohetesView">Proyecto Cohetes</button>
             <button class="top-nav-link" data-view="fallasView">Fallas atencionales</button>
             <button class="top-nav-link" data-view="makerlabView">Experiencia MakerLab</button>
@@ -553,17 +735,17 @@
         </div>
       </header>
 
-      <div id="inicioView" class="view active">
+      <div id="inicioView" class="view">
         <main class="main-content">
-          <section class="hero">
-            <div class="hero-copy">
+          <section class="hero reveal-target">
+            <div>
               <span class="hero-kicker">Investigacion, innovacion y desarrollo academico</span>
               <h1>X MAKER impulsa proyectos con identidad propia.</h1>
               <p>
-                X MAKER es un semillero orientado al desarrollo de proyectos formativos
-                con enfoque cientifico, creativo y academico. Integra prototipado,
-                analisis educativo, socializacion de resultados y cultura maker como
-                parte de una misma experiencia institucional.
+                X MAKER es un semillero orientado al desarrollo de proyectos formativos con enfoque
+                cientifico, creativo y academico. Integra prototipado, analisis educativo,
+                socializacion de resultados y cultura maker como parte de una misma experiencia
+                institucional.
               </p>
               <div class="action-row">
                 <button class="btn-primary nav-trigger" data-view="cohetesView">Ver proyecto de cohetes</button>
@@ -571,24 +753,24 @@
               </div>
             </div>
             <div class="hero-side">
-              <article class="glass-card">
+              <article class="glass-card reveal-target">
                 <span class="section-kicker">Identidad</span>
                 <h3>Semillero X MAKER</h3>
                 <p>
-                  Espacio academico para observacion, experimentacion, produccion de
-                  contenidos y fortalecimiento de habilidades investigativas.
+                  Espacio academico para observacion, experimentacion, produccion de contenidos y
+                  fortalecimiento de habilidades investigativas.
                 </p>
               </article>
               <div class="badge-grid">
-                <article class="mini-card">
+                <article class="mini-card reveal-target">
                   <strong>Cohetes</strong>
                   <span>Festival institucional 2026 y desarrollo experimental.</span>
                 </article>
-                <article class="mini-card">
+                <article class="mini-card reveal-target">
                   <strong>Fallas atencionales</strong>
                   <span>Investigacion educativa con enfoque de analisis academico.</span>
                 </article>
-                <article class="mini-card">
+                <article class="mini-card reveal-target">
                   <strong>MakerLab</strong>
                   <span>Ponencias academicas y experiencias de socializacion institucional.</span>
                 </article>
@@ -596,49 +778,30 @@
             </div>
           </section>
 
-          <section class="section-panel">
+          <section class="section-panel reveal-target">
             <div class="section-header">
               <div>
                 <p class="section-kicker">Presentacion institucional</p>
                 <h2 class="section-title">Lineas de trabajo del semillero</h2>
               </div>
-              <p class="section-text">El semillero organiza su trabajo mediante proyectos aplicados y procesos de socializacion academica.</p>
+              <p class="section-text">
+                El semillero organiza su trabajo mediante proyectos aplicados y procesos de
+                socializacion academica.
+              </p>
             </div>
             <div class="grid-three">
-              <article class="info-card accent-gold">
+              <article class="info-card accent-gold reveal-target">
                 <h4>Prototipado e innovacion</h4>
                 <p>Construccion, evaluacion y mejora de propuestas experimentales con enfoque STEM.</p>
               </article>
-              <article class="info-card accent-blue">
+              <article class="info-card accent-blue reveal-target">
                 <h4>Investigacion educativa</h4>
-                <p>Analisis de problemáticas escolares y temas relacionados con la atencion y el aprendizaje.</p>
+                <p>Analisis de problematicas escolares y temas relacionados con la atencion y el aprendizaje.</p>
               </article>
-              <article class="info-card accent-dark">
+              <article class="info-card accent-dark reveal-target">
                 <h4>Divulgacion academica</h4>
                 <p>Socializacion de evidencias, ponencias, informes y productos desarrollados por el semillero.</p>
               </article>
-            </div>
-          </section>
-
-          <section class="site-footer">
-            <div class="footer-grid">
-              <div>
-                <div class="footer-brand-header">
-                  <img class="footer-logo" src="Recursos/x maker sin fondo .png" alt="Logo X MAKER" />
-                  <div>
-                    <h3>X MAKER</h3>
-                    <p>Semillero de investigacion</p>
-                  </div>
-                </div>
-                <p class="footer-brand-text">
-                  Plataforma academica del semillero X MAKER para presentar proyectos,
-                  actividades institucionales, recursos y canales de contacto.
-                </p>
-              </div>
-              <div class="footer-links">
-                <a class="social-pill" href="https://www.instagram.com/xmaker.uptc?igsh=MTJjNG00eHZ2bWt0OA==" target="_blank" rel="noreferrer">Instagram oficial</a>
-                <a class="social-pill" href="https://www.tiktok.com/@xmaker.uptc?_r=1&_t=ZS-95IKd600BWc" target="_blank" rel="noreferrer">TikTok oficial</a>
-              </div>
             </div>
           </section>
         </main>
@@ -646,7 +809,7 @@
 
       <div id="cohetesView" class="view">
         <main class="main-content">
-          <section class="section-panel">
+          <section class="section-panel reveal-target">
             <div class="section-header">
               <div>
                 <p class="section-kicker">Concurso institucional</p>
@@ -655,14 +818,21 @@
               <span class="pill">Convocatoria oficial</span>
             </div>
             <p class="section-text view-intro">
-              El Festival de Cohetes X MAKER 2026 es una actividad academica orientada a
-              promover creatividad, trabajo en equipo y experimentacion a traves del
-              diseño y lanzamiento de cohetes de agua. Esta vista funciona como la
-              pagina oficial del concurso y reune la descripcion del evento, sus
-              categorias, el registro y la logica general de participacion.
+              El Festival de Cohetes X MAKER 2026 es una actividad academica orientada a promover
+              creatividad, trabajo en equipo y experimentacion a traves del diseno y lanzamiento
+              de cohetes de agua.
             </p>
+
+            <div
+              id="countdownWrapper"
+              style="display:none;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:20px;padding:20px 24px;background:linear-gradient(135deg,rgba(23,52,79,0.96),rgba(49,91,136,0.92));border-radius:18px;"
+            >
+              <span style="color:var(--yellow);font-weight:800;font-size:0.85rem;letter-spacing:0.07em;text-transform:uppercase;margin-right:6px;">Faltan</span>
+              <div id="festivalCountdown" style="display:flex;gap:12px;flex-wrap:wrap;"></div>
+            </div>
+
             <div class="grid-two">
-              <article class="table-card accent-gold">
+              <article class="table-card accent-gold reveal-target">
                 <h4>Objetivos del festival</h4>
                 <ul>
                   <li>Fomentar el interes por la fisica, la experimentacion y la innovacion estudiantil.</li>
@@ -670,24 +840,59 @@
                   <li>Visibilizar el trabajo del semillero X MAKER en escenarios institucionales.</li>
                 </ul>
               </article>
-              <article class="table-card accent-blue">
+              <article class="table-card accent-blue reveal-target">
                 <h4>Formulario oficial de inscripcion</h4>
-                <p>El proceso de inscripcion al Festival de Cohetes X MAKER 2026 se realizara mediante el formulario oficial dispuesto por la organizacion del evento.</p>
+                <p>
+                  El proceso de inscripcion al Festival de Cohetes X MAKER 2026 se realizara mediante
+                  el formulario oficial dispuesto por la organizacion del evento.
+                </p>
                 <div class="link-row">
-                  <a class="download-link" href="#">Formulario oficial de inscripcion</a>
+                  <span class="link-pending">Formulario disponible proximamente</span>
                 </div>
               </article>
             </div>
+
             <div class="grid-two" style="margin-top: 18px;">
-              <article class="table-card accent-dark">
+              <article class="table-card accent-blue reveal-target">
+                <h4>Fecha del festival</h4>
+                <p>
+                  La jornada principal del Festival de Cohetes X MAKER 2026 esta proyectada para el
+                  segundo semestre de 2026. La fecha definitiva se publicara junto con la apertura
+                  oficial de inscripciones.
+                </p>
+                <p style="margin-bottom:0;">
+                  <strong style="color:var(--navy);">Estado actual:</strong> programacion institucional en definicion.
+                </p>
+              </article>
+              <article class="table-card accent-dark reveal-target">
+                <h4>Canal de informacion</h4>
+                <p>
+                  Mientras se habilita el formulario, la comunidad interesada puede solicitar
+                  informacion preliminar por correo institucional y redes del semillero.
+                </p>
+                <div class="info-stack">
+                  <a class="plain-link" href="mailto:shirley.ovalle@uptc.edu.co">shirley.ovalle@uptc.edu.co</a>
+                  <a
+                    class="plain-link"
+                    href="https://www.instagram.com/xmaker.uptc?igsh=MTJjNG00eHZ2bWt0OA=="
+                    target="_blank"
+                    rel="noreferrer"
+                    >Instagram del semillero</a
+                  >
+                </div>
+              </article>
+            </div>
+
+            <div class="grid-two" style="margin-top: 18px;">
+              <article class="table-card accent-dark reveal-target">
                 <h4>Quienes pueden participar</h4>
                 <ul>
-                  <li>Estudiantes interesados en el diseño y construccion de cohetes de agua.</li>
+                  <li>Estudiantes interesados en el diseno y construccion de cohetes de agua.</li>
                   <li>Equipos que presenten una propuesta funcional y cumplan las condiciones del evento.</li>
                   <li>Participantes con disposicion para socializar su proceso de construccion y aprendizaje.</li>
                 </ul>
               </article>
-              <article class="table-card">
+              <article class="table-card reveal-target">
                 <h4>Informacion esperada en el registro</h4>
                 <ul>
                   <li>Nombre del equipo y responsables.</li>
@@ -697,6 +902,7 @@
                 </ul>
               </article>
             </div>
+
             <div class="section-header" style="margin-top: 18px;">
               <div>
                 <p class="section-kicker">Estructura del concurso</p>
@@ -704,26 +910,27 @@
               </div>
             </div>
             <div class="grid-three">
-              <article class="info-card accent-gold">
+              <article class="info-card accent-gold reveal-target">
                 <h4>Convocatoria</h4>
                 <p>Difusion de fechas, reglamento, requisitos, categorias y condiciones generales para la participacion estudiantil.</p>
               </article>
-              <article class="info-card accent-blue">
+              <article class="info-card accent-blue reveal-target">
                 <h4>Competencia</h4>
                 <p>Jornada de presentacion, revision de prototipos, lanzamientos, medicion de resultados y evaluacion por criterios.</p>
               </article>
-              <article class="info-card accent-dark">
+              <article class="info-card accent-dark reveal-target">
                 <h4>Socializacion</h4>
                 <p>Divulgacion de resultados, reconocimiento a participantes y fortalecimiento de la cultura investigativa institucional.</p>
               </article>
             </div>
+
             <div class="section-header" style="margin-top: 18px;">
               <div>
                 <p class="section-kicker">Categorias sugeridas</p>
                 <h2 class="section-title">Modelo de organizacion del concurso</h2>
               </div>
             </div>
-            <table class="simple-table">
+            <table class="simple-table reveal-target">
               <thead>
                 <tr>
                   <th>Categoria</th>
@@ -736,7 +943,7 @@
                   <td>Reconoce el cohete que logre mejor distancia o altura segun el criterio definido por la organizacion.</td>
                 </tr>
                 <tr>
-                  <td>Mejor diseño</td>
+                  <td>Mejor diseno</td>
                   <td>Evalua creatividad, acabado del prototipo, identidad visual y presentacion general del equipo.</td>
                 </tr>
                 <tr>
@@ -745,20 +952,60 @@
                 </tr>
               </tbody>
             </table>
+
             <div class="grid-two" style="margin-top: 18px;">
-              <article class="highlight-box">
-                <h4 style="margin: 0 0 10px; color: var(--navy);">Valor academico del proyecto</h4>
+              <article class="highlight-box reveal-target">
+                <h4 style="margin:0 0 10px;color:var(--navy);">Valor academico del proyecto</h4>
                 <p class="section-text">
-                  El festival permite articular fisica, diseño experimental, trabajo colaborativo,
+                  El festival permite articular fisica, diseno experimental, trabajo colaborativo,
                   creatividad y comunicacion academica dentro de una experiencia visible para la institucion.
                 </p>
               </article>
-              <article class="highlight-box">
-                <h4 style="margin: 0 0 10px; color: var(--navy);">Proyeccion del semillero</h4>
+              <article class="highlight-box reveal-target">
+                <h4 style="margin:0 0 10px;color:var(--navy);">Proyeccion del semillero</h4>
                 <p class="section-text">
                   Esta iniciativa ayuda a consolidar una identidad propia para X MAKER, fortaleciendo
                   su portafolio de actividades, muestras institucionales y futuras convocatorias.
                 </p>
+              </article>
+            </div>
+
+            <div class="section-header" style="margin-top: 24px;">
+              <div>
+                <p class="section-kicker">Preguntas frecuentes</p>
+                <h2 class="section-title">FAQ del Festival de Cohetes</h2>
+              </div>
+            </div>
+            <div class="faq-list">
+              <article class="faq-item reveal-target">
+                <button class="faq-question" type="button">
+                  <span>El festival ya tiene inscripciones abiertas?</span>
+                  <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                  Aun no. El sitio ya deja preparada la convocatoria, pero el formulario oficial se publicara
+                  cuando la organizacion confirme la fecha, lineamientos y cronograma.
+                </div>
+              </article>
+              <article class="faq-item reveal-target">
+                <button class="faq-question" type="button">
+                  <span>Que tipo de cohetes participaran?</span>
+                  <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                  La propuesta del semillero esta enfocada en cohetes de agua, porque permiten trabajar
+                  principios fisicos, prototipado seguro y experimentacion educativa.
+                </div>
+              </article>
+              <article class="faq-item reveal-target">
+                <button class="faq-question" type="button">
+                  <span>Se puede participar en equipos?</span>
+                  <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                  Si. El festival esta pensado para promover colaboracion, por eso se contempla la participacion
+                  por equipos con responsables definidos y socializacion del proceso.
+                </div>
               </article>
             </div>
           </section>
@@ -767,7 +1014,7 @@
 
       <div id="fallasView" class="view">
         <main class="main-content">
-          <section class="section-panel">
+          <section class="section-panel reveal-target">
             <div class="section-header">
               <div>
                 <p class="section-kicker">Investigacion educativa</p>
@@ -776,23 +1023,31 @@
               <span class="pill">Linea academica</span>
             </div>
             <p class="section-text view-intro">
-              Esta linea del semillero examina las fallas atencionales desde una perspectiva educativa e investigativa,
-              buscando comprender su relacion con los procesos de aprendizaje, la participacion escolar,
-              el rendimiento academico y las estrategias pedagogicas de apoyo dentro del contexto institucional.
+              Esta linea del semillero examina las fallas atencionales desde una perspectiva
+              educativa e investigativa, buscando comprender su relacion con los procesos de
+              aprendizaje, la participacion escolar, el rendimiento academico y las estrategias
+              pedagogicas de apoyo dentro del contexto institucional.
             </p>
             <div class="wide-grid">
-              <article class="table-card accent-blue">
+              <article class="table-card accent-blue reveal-target">
                 <h4>Objetivo general</h4>
-                <p>Analizar las fallas atencionales como fenomeno relevante en el contexto escolar para aportar comprension academica y orientaciones que favorezcan la inclusion, la permanencia y el aprendizaje.</p>
+                <p>
+                  Analizar las fallas atencionales como fenomeno relevante en el contexto escolar
+                  para aportar comprension academica y orientaciones que favorezcan la inclusion,
+                  la permanencia y el aprendizaje.
+                </p>
                 <ul>
                   <li>Reconocer manifestaciones de desatencion en procesos escolares.</li>
                   <li>Relacionar dichas manifestaciones con el rendimiento academico.</li>
                   <li>Construir orientaciones de apoyo para docentes y estudiantes.</li>
                 </ul>
               </article>
-              <article class="table-card accent-dark">
+              <article class="table-card accent-dark reveal-target">
                 <h4>Enfoque metodologico</h4>
-                <p>Revision documental, analisis de antecedentes, formulacion de categorias de estudio y elaboracion de interpretaciones desde una perspectiva pedagogica e investigativa.</p>
+                <p>
+                  Revision documental, analisis de antecedentes, formulacion de categorias de estudio
+                  y elaboracion de interpretaciones desde una perspectiva pedagogica e investigativa.
+                </p>
                 <ul>
                   <li>Revision teorica de conceptos base y antecedentes.</li>
                   <li>Analisis de experiencias y situaciones del contexto educativo.</li>
@@ -801,20 +1056,20 @@
               </article>
             </div>
             <div class="grid-three" style="margin-top: 18px;">
-              <article class="info-card accent-gold">
+              <article class="info-card accent-gold reveal-target">
                 <h4>Problema de estudio</h4>
                 <p>Las fallas atencionales pueden afectar comprension, concentracion, participacion en clase y cumplimiento de actividades academicas.</p>
               </article>
-              <article class="info-card accent-blue">
+              <article class="info-card accent-blue reveal-target">
                 <h4>Poblacion de interes</h4>
                 <p>La investigacion se orienta a estudiantes y contextos escolares donde se observan dificultades asociadas a la atencion sostenida.</p>
               </article>
-              <article class="info-card accent-dark">
+              <article class="info-card accent-dark reveal-target">
                 <h4>Producto esperado</h4>
                 <p>Orientaciones pedagogicas, insumos de socializacion y conclusiones que aporten al mejoramiento del rendimiento academico.</p>
               </article>
             </div>
-            <table class="simple-table">
+            <table class="simple-table reveal-target">
               <thead>
                 <tr>
                   <th>Fase</th>
@@ -828,7 +1083,7 @@
                 </tr>
                 <tr>
                   <td>Analisis</td>
-                  <td>Identificacion de retos, necesidades, factores asociados y posibilidades de acompañamiento dentro del aula.</td>
+                  <td>Identificacion de retos, necesidades, factores asociados y posibilidades de acompanamiento dentro del aula.</td>
                 </tr>
                 <tr>
                   <td>Produccion academica</td>
@@ -837,17 +1092,13 @@
               </tbody>
             </table>
             <div class="grid-two" style="margin-top: 18px;">
-              <article class="highlight-box">
-                <h4 style="margin: 0 0 10px; color: var(--navy);">Aporte institucional</h4>
-                <p class="section-text">
-                  Esta linea fortalece la mirada del semillero hacia problemáticas reales del aula y conecta la investigacion con necesidades concretas de la comunidad educativa.
-                </p>
+              <article class="highlight-box reveal-target">
+                <h4 style="margin:0 0 10px;color:var(--navy);">Aporte institucional</h4>
+                <p class="section-text">Esta linea fortalece la mirada del semillero hacia problematicas reales del aula y conecta la investigacion con necesidades concretas de la comunidad educativa.</p>
               </article>
-              <article class="highlight-box">
-                <h4 style="margin: 0 0 10px; color: var(--navy);">Proyeccion academica</h4>
-                <p class="section-text">
-                  Los resultados pueden convertirse en ponencias, socializaciones institucionales, posters academicos o materiales de orientacion pedagógica.
-                </p>
+              <article class="highlight-box reveal-target">
+                <h4 style="margin:0 0 10px;color:var(--navy);">Proyeccion academica</h4>
+                <p class="section-text">Los resultados pueden convertirse en ponencias, socializaciones institucionales, posters academicos o materiales de orientacion pedagogica.</p>
               </article>
             </div>
           </section>
@@ -856,7 +1107,7 @@
 
       <div id="makerlabView" class="view">
         <main class="main-content">
-          <section class="section-panel">
+          <section class="section-panel reveal-target">
             <div class="section-header">
               <div>
                 <p class="section-kicker">Proyecto de ponencias</p>
@@ -868,16 +1119,18 @@
               Experiencia MakerLab reune ponencias y socializaciones realizadas por integrantes del semillero X MAKER.
             </p>
             <div class="grid-two">
-              <article class="info-card accent-gold">
+              <article class="info-card accent-gold reveal-target">
                 <h4>Ponencia de Jesus Parra</h4>
-                <p>Presentacion orientada a compartir una experiencia academica vinculada al trabajo del semillero, con enfasis en participacion estudiantil y socializacion de resultados.</p>
+                <p><strong style="color:var(--navy);font-size:0.97rem;">Evolucion del Movimiento Maker a Nivel Mundial</strong></p>
+                <p>Recorrido por el origen, expansion y proyeccion del movimiento maker a nivel global, con enfasis en su impacto en contextos educativos y su relacion con el trabajo del semillero X MAKER.</p>
                 <div class="link-row">
                   <a class="plain-link" href="mailto:jesus.parra02@uptc.edu.co">jesus.parra02@uptc.edu.co</a>
                 </div>
               </article>
-              <article class="info-card accent-blue">
+              <article class="info-card accent-blue reveal-target">
                 <h4>Ponencia de Sharon Valentina</h4>
-                <p>Presentacion enfocada en la experiencia MakerLab como escenario de exposicion de ideas, construccion de conocimiento y fortalecimiento de la comunicacion academica.</p>
+                <p><strong style="color:var(--navy);font-size:0.97rem;">Aproximacion al reconocimiento de fallas atencionales como posibilidad para mejorar el rendimiento academico</strong></p>
+                <p>Presentacion enfocada en el analisis educativo de las fallas atencionales, su impacto en el aprendizaje y la construccion de orientaciones academicas para la comunidad escolar.</p>
                 <div class="link-row">
                   <a class="plain-link" href="mailto:sharon.rodriguez@uptc.edu.co">sharon.rodriguez@uptc.edu.co</a>
                 </div>
@@ -885,7 +1138,7 @@
             </div>
           </section>
 
-          <section class="section-panel">
+          <section class="section-panel reveal-target">
             <div class="section-header">
               <div>
                 <p class="section-kicker">Galeria</p>
@@ -893,22 +1146,22 @@
               </div>
             </div>
             <div class="resource-grid">
-              <article class="resource-card">
+              <article class="resource-card reveal-target">
                 <img src="Recursos/Imagen1.jpeg" alt="Imagen 1 de Experiencia MakerLab" />
                 <h4>Registro visual 01</h4>
                 <p>Material grafico asociado a la experiencia de ponencias y socializacion del semillero.</p>
               </article>
-              <article class="resource-card">
+              <article class="resource-card reveal-target">
                 <img src="Recursos/imagen2.jpeg" alt="Imagen 2 de Experiencia MakerLab" />
                 <h4>Registro visual 02</h4>
                 <p>Escena vinculada al desarrollo de actividades academicas y participacion estudiantil.</p>
               </article>
-              <article class="resource-card">
+              <article class="resource-card reveal-target">
                 <img src="Recursos/imagen 3.jpeg" alt="Imagen 3 de Experiencia MakerLab" />
                 <h4>Registro visual 03</h4>
                 <p>Apoyo visual para documentar momentos relevantes del proyecto MakerLab.</p>
               </article>
-              <article class="resource-card">
+              <article class="resource-card reveal-target">
                 <img src="Recursos/imagen4.jpeg" alt="Imagen 4 de Experiencia MakerLab" />
                 <h4>Registro visual 04</h4>
                 <p>Imagen destinada a reforzar la memoria visual y academica del semillero.</p>
@@ -916,7 +1169,7 @@
             </div>
           </section>
 
-          <section class="section-panel">
+          <section class="section-panel reveal-target">
             <div class="section-header">
               <div>
                 <p class="section-kicker">Documentos</p>
@@ -924,22 +1177,22 @@
               </div>
             </div>
             <div class="download-grid">
-              <article class="download-card">
+              <article class="download-card reveal-target">
                 <h4>Ponencia Jesus Nelson EV-MMK</h4>
                 <p>Documento en formato Word disponible para consulta o descarga del contenido asociado a la ponencia.</p>
                 <a class="download-link" href="Recursos/Jesus_Nelson EV-MMK.docx" download>Descargar archivo Word</a>
               </article>
-              <article class="download-card">
+              <article class="download-card reveal-target">
                 <h4>Ponencia Chaparro Gomez</h4>
                 <p>Documento en formato Word destinado al desarrollo de la experiencia de socializacion academica.</p>
                 <a class="download-link" href="Recursos/Ponencia Chaparro_Gomez.docx" download>Descargar archivo Word</a>
               </article>
-              <article class="download-card">
-                <h4>Articulo Sharon y Shirley</h4>
-                <p>Archivo PDF con contenido academico relacionado con el trabajo desarrollado en esta linea.</p>
+              <article class="download-card reveal-target">
+                <h4>Articulo de Sharon y Shirley</h4>
+                <p>Documento academico relacionado con el analisis de fallas atencionales y su relacion con el rendimiento academico.</p>
                 <a class="download-link" href="Recursos/articulo SHARON Y SHIRLEY .pdf" download>Descargar PDF</a>
               </article>
-              <article class="download-card">
+              <article class="download-card reveal-target">
                 <h4>Formato Ponencia CITE REPETIC</h4>
                 <p>Formato PDF de apoyo para la preparacion y organizacion de ponencias academicas.</p>
                 <a class="download-link" href="Recursos/FORMATO PONENCIA CITE-REPETIC.pdf" download>Descargar PDF</a>
@@ -951,7 +1204,7 @@
 
       <div id="contactosView" class="view">
         <main class="main-content">
-          <section class="section-panel">
+          <section class="section-panel reveal-target">
             <div class="section-header">
               <div>
                 <p class="section-kicker">Directorio</p>
@@ -960,35 +1213,48 @@
               <span class="pill">Equipo X MAKER</span>
             </div>
             <div class="contact-grid">
-              <article class="contact-card accent-gold">
+              <article class="contact-card accent-gold reveal-target">
                 <h4>Directora del semillero</h4>
                 <p>Shirley Ovalle</p>
+                <p class="contact-extra">Coordinacion general del semillero, orientacion academica de proyectos y acompanamiento institucional.</p>
                 <div class="link-row">
                   <a class="plain-link" href="mailto:shirley.ovalle@uptc.edu.co">shirley.ovalle@uptc.edu.co</a>
                 </div>
               </article>
-              <article class="contact-card accent-blue">
+              <article class="contact-card accent-blue reveal-target">
                 <h4>Representante de los estudiantes</h4>
                 <p>Jesus Parra</p>
+                <p class="contact-extra">Enlace con estudiantes participantes, apoyo a actividades del semillero y socializacion de procesos.</p>
                 <div class="link-row">
                   <a class="plain-link" href="mailto:jesus.parra02@uptc.edu.co">jesus.parra02@uptc.edu.co</a>
                 </div>
               </article>
-              <article class="contact-card accent-dark">
+              <article class="contact-card accent-dark reveal-target">
                 <h4>Creador de pagina</h4>
                 <p>Cristian Gomez</p>
+                <p class="contact-extra">Apoyo en estructura digital del sitio, organizacion visual y presentacion web del semillero.</p>
                 <div class="link-row">
                   <a class="plain-link" href="mailto:cristian.gomez17@uptc.edu.co">cristian.gomez17@uptc.edu.co</a>
                 </div>
               </article>
-              <article class="contact-card">
+              <article class="contact-card reveal-target">
                 <h4>Redes oficiales</h4>
                 <div class="social-contact-list">
-                  <a class="social-contact-link" href="https://www.instagram.com/xmaker.uptc?igsh=MTJjNG00eHZ2bWt0OA==" target="_blank" rel="noreferrer">
+                  <a
+                    class="social-contact-link"
+                    href="https://www.instagram.com/xmaker.uptc?igsh=MTJjNG00eHZ2bWt0OA=="
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <span class="social-icon instagram">IG</span>
                     Instagram oficial
                   </a>
-                  <a class="social-contact-link" href="https://www.tiktok.com/@xmaker.uptc?_r=1&_t=ZS-95IKd600BWc" target="_blank" rel="noreferrer">
+                  <a
+                    class="social-contact-link"
+                    href="https://www.tiktok.com/@xmaker.uptc?_r=1&_t=ZS-95IKd600BWc"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <span class="social-icon tiktok">TT</span>
                     TikTok oficial
                   </a>
@@ -998,18 +1264,57 @@
           </section>
         </main>
       </div>
+
+      <footer class="site-footer">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-brand-header">
+              <img class="footer-logo" src="Recursos/x maker sin fondo .png" alt="Logo X MAKER" />
+              <div>
+                <h3>X MAKER</h3>
+                <p>Semillero de investigacion</p>
+              </div>
+            </div>
+            <p class="footer-brand-text">
+              Plataforma academica del semillero X MAKER para presentar proyectos, actividades
+              institucionales, recursos y canales oficiales de contacto.
+            </p>
+          </div>
+          <div class="footer-links">
+            <a class="social-pill" href="https://www.instagram.com/xmaker.uptc?igsh=MTJjNG00eHZ2bWt0OA==" target="_blank" rel="noreferrer">Instagram oficial</a>
+            <a class="social-pill" href="https://www.tiktok.com/@xmaker.uptc?_r=1&_t=ZS-95IKd600BWc" target="_blank" rel="noreferrer">TikTok oficial</a>
+          </div>
+        </div>
+      </footer>
+
+      <div id="lightbox" aria-hidden="true">
+        <img id="lightboxImg" src="" alt="" />
+        <button id="lightboxClose" type="button" aria-label="Cerrar imagen">×</button>
+      </div>
     </div>
 
     <script>
       const navButtons = document.querySelectorAll(".top-nav-link");
       const navTriggers = document.querySelectorAll(".nav-trigger");
       const views = document.querySelectorAll(".view");
+      const resourceImages = document.querySelectorAll(".resource-card img");
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightboxImg");
+      const lightboxClose = document.getElementById("lightboxClose");
+      const countdownWrapper = document.getElementById("countdownWrapper");
+      const countdownTarget = document.getElementById("festivalCountdown");
+      const faqQuestions = document.querySelectorAll(".faq-question");
+      const revealTargets = document.querySelectorAll(".reveal-target");
 
       function showView(viewId) {
-        views.forEach((view) => view.classList.toggle("active", view.id === viewId));
-        navButtons.forEach((button) =>
-          button.classList.toggle("active", button.dataset.view === viewId)
-        );
+        views.forEach((view) => {
+          view.classList.toggle("active", view.id === viewId);
+        });
+
+        navButtons.forEach((button) => {
+          button.classList.toggle("active", button.dataset.view === viewId);
+        });
+
         window.scrollTo({ top: 0, behavior: "smooth" });
       }
 
@@ -1020,6 +1325,96 @@
       navTriggers.forEach((button) => {
         button.addEventListener("click", () => showView(button.dataset.view));
       });
+
+      showView("inicioView");
+
+      resourceImages.forEach((image) => {
+        image.addEventListener("click", () => {
+          lightboxImg.src = image.src;
+          lightboxImg.alt = image.alt;
+          lightbox.classList.add("open");
+          lightbox.setAttribute("aria-hidden", "false");
+          document.body.style.overflow = "hidden";
+        });
+      });
+
+      function closeLightbox() {
+        lightbox.classList.remove("open");
+        lightbox.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+
+      lightboxClose.addEventListener("click", closeLightbox);
+      lightbox.addEventListener("click", (event) => {
+        if (event.target === lightbox) {
+          closeLightbox();
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && lightbox.classList.contains("open")) {
+          closeLightbox();
+        }
+      });
+
+      faqQuestions.forEach((button) => {
+        button.addEventListener("click", () => {
+          const item = button.closest(".faq-item");
+          item.classList.toggle("open");
+        });
+      });
+
+      const festivalDate = null;
+
+      function updateCountdown() {
+        if (!festivalDate || !countdownWrapper || !countdownTarget) {
+          return;
+        }
+
+        const now = new Date();
+        const difference = festivalDate.getTime() - now.getTime();
+
+        if (difference <= 0) {
+          countdownTarget.innerHTML = "<span style='color:#fff;font-weight:700;'>El festival ya inicio.</span>";
+          return;
+        }
+
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((difference / (1000 * 60)) % 60);
+        const seconds = Math.floor((difference / 1000) % 60);
+
+        countdownTarget.innerHTML = `
+          <div class="countdown-item"><span class="countdown-num">${days}</span><span class="countdown-label">Dias</span></div>
+          <div class="countdown-item"><span class="countdown-num">${hours}</span><span class="countdown-label">Horas</span></div>
+          <div class="countdown-item"><span class="countdown-num">${minutes}</span><span class="countdown-label">Min</span></div>
+          <div class="countdown-item"><span class="countdown-num">${seconds}</span><span class="countdown-label">Seg</span></div>
+        `;
+      }
+
+      if (festivalDate) {
+        countdownWrapper.style.display = "flex";
+        updateCountdown();
+        window.setInterval(updateCountdown, 1000);
+      }
+
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12 }
+        );
+
+        revealTargets.forEach((item) => observer.observe(item));
+      } else {
+        revealTargets.forEach((item) => item.classList.add("visible"));
+      }
     </script>
   </body>
 </html>
