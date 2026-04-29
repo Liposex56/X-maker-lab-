@@ -228,6 +228,25 @@
         background: var(--card);
         border: 1px solid var(--line);
         box-shadow: var(--shadow);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .glass-card::before,
+      .info-card::before,
+      .mini-card::before,
+      .table-card::before,
+      .resource-card::before,
+      .download-card::before,
+      .contact-card::before,
+      .highlight-box::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: var(--navy-soft);
       }
 
       .glass-card {
@@ -252,6 +271,20 @@
       li {
         color: var(--muted);
         line-height: 1.75;
+      }
+
+      .glass-card p,
+      .info-card p,
+      .table-card p,
+      .resource-card p,
+      .download-card p,
+      .contact-card p {
+        margin: 0 0 12px;
+      }
+
+      .mini-card span {
+        display: block;
+        margin: 0;
       }
 
       .action-row {
@@ -358,6 +391,7 @@
       .contact-card {
         padding: 22px;
         border-radius: var(--radius-lg);
+        height: 100%;
       }
 
       .mini-card strong,
@@ -381,31 +415,55 @@
       }
 
       .accent-dark {
-        border-top: 5px solid var(--slate);
+        border-top: 5px solid #d7a316;
+      }
+
+      .accent-gold::before {
+        background: #d7a316;
+      }
+
+      .accent-blue::before {
+        background: var(--navy-soft);
+      }
+
+      .accent-dark::before {
+        background: #d7a316;
       }
 
       .simple-table {
         width: 100%;
-        border-collapse: collapse;
+        border-collapse: separate;
+        border-spacing: 0;
         margin-top: 10px;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-top: 5px solid var(--navy-soft);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow);
+        overflow: hidden;
       }
 
       .simple-table th,
       .simple-table td {
         text-align: left;
-        padding: 13px 10px;
+        padding: 16px 18px;
         border-bottom: 1px solid var(--line);
         vertical-align: top;
       }
 
       .simple-table th {
         color: var(--navy);
+        background: rgba(49, 91, 136, 0.08);
+      }
+
+      .simple-table tr:last-child td {
+        border-bottom: 0;
       }
 
       .highlight-box {
         padding: 22px;
-        border-radius: 18px;
-        background: #f8fafc;
+        border-radius: var(--radius-lg);
+        background: var(--card);
       }
 
       .plain-link {
@@ -420,26 +478,6 @@
 
       .link-row {
         margin-top: 14px;
-      }
-
-      .link-pending {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 10px 16px;
-        border-radius: 12px;
-        background: rgba(244, 198, 61, 0.14);
-        border: 1.5px dashed #d7a316;
-        color: #7a5c0f;
-        font-size: 0.92rem;
-        font-weight: 700;
-      }
-
-      .link-pending::before {
-        content: "Pendiente";
-        font-size: 0.74rem;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
       }
 
       .resource-card img {
@@ -486,6 +524,7 @@
         justify-content: center;
         color: #fff;
         font-weight: 800;
+        overflow: hidden;
       }
 
       .social-icon.instagram {
@@ -494,6 +533,14 @@
 
       .social-icon.tiktok {
         background: linear-gradient(135deg, #111111, #25f4ee, #fe2c55);
+      }
+
+      .social-icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+        background: #fff;
       }
 
       .contact-extra {
@@ -619,6 +666,55 @@
       }
 
       .footer-links .social-pill {
+        text-align: center;
+      }
+
+      .footer-meta {
+        display: grid;
+        gap: 12px;
+        align-content: start;
+      }
+
+      .footer-note {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.88);
+        line-height: 1.7;
+      }
+
+      .footer-note strong {
+        color: var(--yellow-soft);
+      }
+
+      .footer-logos {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        align-items: center;
+      }
+
+      .footer-badge {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 74px;
+        min-width: 140px;
+        padding: 12px 16px;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .footer-badge img {
+        max-height: 42px;
+        max-width: 150px;
+        object-fit: contain;
+        display: block;
+      }
+
+      .footer-badge-text {
+        color: rgba(255, 255, 255, 0.76);
+        font-size: 0.92rem;
+        font-weight: 700;
         text-align: center;
       }
 
@@ -846,9 +942,9 @@
                   El proceso de inscripcion al Festival de Cohetes X MAKER 2026 se realizara mediante
                   el formulario oficial dispuesto por la organizacion del evento.
                 </p>
-                <div class="link-row">
-                  <span class="link-pending">Formulario disponible proximamente</span>
-                </div>
+                <p style="margin-bottom:0;">
+                  La publicacion del enlace oficial se realizara a traves de los canales institucionales del semillero.
+                </p>
               </article>
             </div>
 
@@ -1128,11 +1224,11 @@
                 </div>
               </article>
               <article class="info-card accent-blue reveal-target">
-                <h4>Ponencia de Sharon Valentina</h4>
+                <h4>Ponencia de Shirley Ovalle</h4>
                 <p><strong style="color:var(--navy);font-size:0.97rem;">Aproximacion al reconocimiento de fallas atencionales como posibilidad para mejorar el rendimiento academico</strong></p>
                 <p>Presentacion enfocada en el analisis educativo de las fallas atencionales, su impacto en el aprendizaje y la construccion de orientaciones academicas para la comunidad escolar.</p>
                 <div class="link-row">
-                  <a class="plain-link" href="mailto:sharon.rodriguez@uptc.edu.co">sharon.rodriguez@uptc.edu.co</a>
+                  <a class="plain-link" href="mailto:shirley.ovalle@uptc.edu.co">shirley.ovalle@uptc.edu.co</a>
                 </div>
               </article>
             </div>
@@ -1188,7 +1284,7 @@
                 <a class="download-link" href="Recursos/Ponencia Chaparro_Gomez.docx" download>Descargar archivo Word</a>
               </article>
               <article class="download-card reveal-target">
-                <h4>Articulo de Sharon y Shirley</h4>
+                <h4>Articulo de Shirley Ovalle</h4>
                 <p>Documento academico relacionado con el analisis de fallas atencionales y su relacion con el rendimiento academico.</p>
                 <a class="download-link" href="Recursos/articulo SHARON Y SHIRLEY .pdf" download>Descargar PDF</a>
               </article>
@@ -1246,7 +1342,9 @@
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <span class="social-icon instagram">IG</span>
+                    <span class="social-icon instagram">
+                      <img src="Recursos/instagram.png" alt="Logo Instagram" />
+                    </span>
                     Instagram oficial
                   </a>
                   <a
@@ -1255,7 +1353,9 @@
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <span class="social-icon tiktok">TT</span>
+                    <span class="social-icon tiktok">
+                      <img src="Recursos/png-transparent-tik-tok-thumbnail.png" alt="Logo TikTok" />
+                    </span>
                     TikTok oficial
                   </a>
                 </div>
@@ -1276,13 +1376,28 @@
               </div>
             </div>
             <p class="footer-brand-text">
-              Plataforma academica del semillero X MAKER para presentar proyectos, actividades
-              institucionales, recursos y canales oficiales de contacto.
+              El semillero X Maker nacio como una idea durante el primer semestre de 2025 y se
+              consolido oficialmente en el segundo semestre del mismo ano. Desde entonces, ha
+              continuado desarrollandose hasta la actualidad como una iniciativa del grupo de
+              investigacion CETIN, orientada al fortalecimiento de procesos investigativos y
+              formativos.
             </p>
           </div>
-          <div class="footer-links">
-            <a class="social-pill" href="https://www.instagram.com/xmaker.uptc?igsh=MTJjNG00eHZ2bWt0OA==" target="_blank" rel="noreferrer">Instagram oficial</a>
-            <a class="social-pill" href="https://www.tiktok.com/@xmaker.uptc?_r=1&_t=ZS-95IKd600BWc" target="_blank" rel="noreferrer">TikTok oficial</a>
+          <div class="footer-meta">
+            <p class="footer-note">
+              <strong>Direccion institucional:</strong> semillero adscrito al grupo de investigacion CETIN y articulado con los procesos academicos de la UPTC.
+            </p>
+            <div class="footer-logos">
+              <div class="footer-badge">
+                <img src="Recursos/Logo_de_la_UPTC.svg.png" alt="Logo UPTC" />
+              </div>
+              <div class="footer-badge">
+                <img src="Recursos/logo_FacultadCienciasEducacion.png" alt="Logo Facultad de Ciencias de la Educacion" />
+              </div>
+              <div class="footer-badge">
+                <img src="Recursos/cetin_logo-removebg-preview.png" alt="Logo CETIN" />
+              </div>
+            </div>
           </div>
         </div>
       </footer>
